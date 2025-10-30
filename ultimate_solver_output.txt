@@ -1,0 +1,76 @@
+======================================================================
+ULTIMATE COMPREHENSIVE SOLVER
+Testing EXTREME variations...
+======================================================================
+
+[+] Loaded 104 rectangles
+
+Testing 8 area types × 7 transforms × 7 combine ops × 13 pairing patterns
+Total combinations: 5096
+
+[ 100] shell      + sqrt     + sum      + skip_16         = ✗
+[ 200] shell      + square   + diff     + skip_4          = ✗
+[ 300] shell      + log      + product  + sequential      = ✗
+[ 400] shell      + div10    + product  + skip_31         = ✗
+[ 500] shell      + div4     + avg      + skip_7          = ✗
+[ 600] shell      + mod128   + xor      + reverse         = ✗
+[ 700] outer      + none     + xor      + skip_32         = ✗
+[ 800] outer      + sqrt     + and      + skip_8          = ✗
+[ 900] outer      + square   + or       + skip_2          = ✗
+[1000] outer      + log      + or       + interleaved     = ✗
+[1100] outer      + div4     + sum      + skip_15         = ✗
+[1200] outer      + mod128   + diff     + skip_3          = ✗
+[1300] inner      + none     + diff     + crossed         = ✗
+[1400] inner      + sqrt     + product  + skip_16         = ✗
+[1500] inner      + square   + avg      + skip_4          = ✗
+[1600] inner      + log      + xor      + sequential      = ✗
+[1700] inner      + div10    + xor      + skip_31         = ✗
+[1800] inner      + div4     + and      + skip_7          = ✗
+[1900] inner      + mod128   + or       + reverse         = ✗
+[2000] width      + none     + or       + skip_32         = ✗
+[2100] width      + square   + sum      + skip_8          = ✗
+[2200] width      + log      + diff     + skip_2          = ✗
+[2300] width      + div10    + diff     + interleaved     = ✗
+[2400] width      + div4     + product  + skip_15         = ✗
+[2500] width      + mod128   + avg      + skip_3          = ✗
+[2600] height     + none     + avg      + crossed         = ✗
+[2700] height     + sqrt     + xor      + skip_16         = ✗
+[2800] height     + square   + and      + skip_4          = ✗
+[2900] height     + log      + or       + sequential      = ✗
+[3000] height     + div10    + or       + skip_31         = ✗
+[3100] height     + mod128   + sum      + skip_7          = ✗
+[3200] w*h        + none     + diff     + reverse         = ✗
+[3300] w*h        + sqrt     + diff     + skip_32         = ✗
+[3400] w*h        + square   + product  + skip_8          = ✗
+[3500] w*h        + log      + avg      + skip_2          = ✗
+[3600] w*h        + div10    + avg      + interleaved     = ✗
+[3700] w*h        + div4     + xor      + skip_15         = ✗
+[3800] w*h        + mod128   + and      + skip_3          = ✗
+[3900] w+h        + none     + and      + crossed         = ✗
+[4000] w+h        + sqrt     + or       + skip_16         = ✗
+[4100] w+h        + log      + sum      + skip_4          = ✗
+[4200] w+h        + div10    + diff     + sequential      = ✗
+[4300] w+h        + div4     + diff     + skip_31         = ✗
+[4400] w+h        + mod128   + product  + skip_7          = ✗
+[4500] perimeter  + none     + avg      + reverse         = ✗
+[4600] perimeter  + sqrt     + avg      + skip_32         = ✗
+[4700] perimeter  + square   + xor      + skip_8          = ✗
+[4800] perimeter  + log      + and      + skip_2          = ✗
+[4900] perimeter  + div10    + and      + interleaved     = ✗
+[5000] perimeter  + div4     + or       + skip_15         = ✗
+
+======================================================================
+ULTIMATE SOLVER COMPLETE
+Tested 5096 combinations - None matched
+======================================================================
+
+[*] Trying hash-based approaches...
+    SHA256 hash of area pairs: ✗
+    MD5 hash of area pairs: ✗
+
+======================================================================
+ALL APPROACHES EXHAUSTED
+======================================================================
+
+The puzzle requires information not derivable from the image alone.
+Focus on decoding the mini-puzzle hint or finding additional context.
