@@ -1,0 +1,123 @@
+import cv2
+import numpy as np
+import random
+import time
+from bitcoinlib.keys import Key
+
+# Configuration
+IMAGE_PATH = 'bitcoin-lvl5-puzzle.png'
+EXPECTED_ADDRESS = '1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7'
+THRESHOLD_BINARY = 127
+SLEEP_BETWEEN_ITERATIONS = 0.6  # Set 0 for maximum speed
+MAX_ITERATIONS = None           # Set to an integer to limit attempts
+
+# Load Image
+def load_image(path):
+    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+    if image is None:
+        raise FileNotFoundError(f"Image not found: {path}")
+    _, binary = cv2.threshold(image, THRESHOLD_BINARY, 255, cv2.THRESH_BINARY)
+    return binary
+
+# Extract Shell Areas from Image
+def find_shell_contours(image):
+    contours, hierarchy = cv2.findContours(image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    shell_areas = []
+    boxes = []
+
+    for i, cnt in enumerate(contours):
+        parent = hierarchy[0][i][3]
+        if parent != -1:
+            outer_cnt = contours[parent]
+            outer_area = cv2.contourArea(outer_cnt)
+            inner_area = cv2.contourArea(cnt)
+            shell_area = outer_area - inner_area
+
+            x, y, w, h = cv2.boundingRect(outer_cnt)
+            shell_areas.append(shell_area)
+            boxes.append((x, y, w, h))
+
+    # Sort rectangles top-to-bottom, then left-to-right
+    combined = list(zip(shell_areas, boxes))
+    sorted_combined = sorted(combined, key=lambda item: (round(item[1][1] / 10), item[1][0]))
+    sorted_areas = [item[0] for item in sorted_combined]
+    return sorted_areas
+
+# Pair Shell Areas into Bytes
+def pairwise_to_bytes(areas, strategy='random'):
+    bytes_out = []
+    if strategy == 'random':
+        indices = list(range(len(areas)))
+        random.shuffle(indices)
+        for i in range(0, len(indices), 2):
+            if i + 1 < len(indices):
+                a = areas[indices[i]]
+                b = areas[indices[i + 1]]
+                bytes_out.append(int(a + b) % 256)
+    else:  # default to sequential
+        for i in range(0, len(areas), 2):
+            if i + 1 < len(areas):
+                total = areas[i] + areas[i + 1]
+                bytes_out.append(int(total) % 256)
+    return bytes_out
+
+# Validate Candidate Key
+def validate_key(byte_list):
+    if len(byte_list) != 32:
+        return None, None, False
+    hex_key = ''.join(f"{b:02x}" for b in byte_list)
+    try:
+        key = Key(import_key=hex_key)
+        address = key.address()
+        is_match = (address == EXPECTED_ADDRESS)
+        return hex_key, address, is_match
+    except Exception:
+        return hex_key, None, False
+
+# Main Loop
+def main_loop():
+    print("[*] Loading and analyzing image...")
+    binary = load_image(IMAGE_PATH)
+    original_areas = find_shell_contours(binary)
+
+    if len(original_areas) < 64:
+        print("Error: Fewer than 64 rectangles detected. Check image or detection logic.")
+        return
+
+    print(f"[+] Starting infinite decode loop ({len(original_areas)} rectangles)...")
+
+    iteration = 0
+    while True:
+        iteration += 1
+        print(f"\n--- Iteration {iteration} ---")
+
+        # Copy and apply white-line pixel hint modifications
+        areas = original_areas[:64].copy()
+        areas[39] += 17  # Rectangle #40
+        areas[52] += 6   # Rectangle #53
+
+        # Random pairing strategy
+        byte_list = pairwise_to_bytes(areas, strategy='random')
+
+        # Validate derived private key
+        hex_key, address, is_valid = validate_key(byte_list)
+
+        print(f"Private Key (hex): {hex_key}")
+        print(f"BTC Address: {address}")
+        print(f"Matches Expected: {is_valid}")
+
+        if is_valid:
+            print("\nSUCCESS! Matching key found!")
+            with open("winning_key.txt", "w") as f:
+                f.write(f"Private Key (hex): {hex_key}\n")
+                f.write(f"BTC Address: {address}\n")
+            break
+
+        if MAX_ITERATIONS and iteration >= MAX_ITERATIONS:
+            print("Reached max iterations. Stopping.")
+            break
+
+        time.sleep(SLEEP_BETWEEN_ITERATIONS)
+
+if __name__ == "__main__":
+    main_loop()
