@@ -1,6 +1,7 @@
 # Bicoin Crypto Puzzle Level 5
 
 0.005 BTC Level 5 Puzzle by Zden
+
 Prize: 0.0055555 BTC
 Creator: Zden
 Start Date: 2018-11-09
