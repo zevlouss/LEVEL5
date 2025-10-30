@@ -26,6 +26,16 @@ clarity edit: sum of two ~~consecutive~~ following rectangles...
 PUZZLE IMAGE:
 ![image alt](https://github.com/zevlouss/LEVEL5/blob/3707c6fef42f7e2805c7d5fb7ec32e1a15fd950c/crypto5fix.png)
 
+His(author) previous puzzle solving patterns:
 
+PUZZLE 1:
+![image alt](https://crypto.haluska.sk/crypto1solver.png)
 
+PUZZLE 2:
+![image alt](https://crypto.haluska.sk/crypto2solver.png)
 
+PUZZLE 3:
+![image alt](https://crypto.haluska.sk/crypto3solver.png)
+
+PUZZLE 4:
+https://steemit.com/bitcoin/@mmorsl/solution-of-the-bitcoin-crypto-puzzle-level-4-by-zden
