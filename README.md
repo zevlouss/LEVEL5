@@ -18,7 +18,8 @@ The new corrected version including new hints!
 
 This image encodes private key for address 1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7.
 
-Author:UNSOLVED for over 3 years because the original release was uncomplete! Relaunched on 12th of December 2021. My excuses to everyone!
+Author/puzzle creator:
+UNSOLVED for over 3 years because the original release was uncomplete! Relaunched on 12th of December 2021. My excuses to everyone!
 
 past hint:
 clarity edit: sum of two ~~consecutive~~ following rectangles...
@@ -26,7 +27,7 @@ clarity edit: sum of two ~~consecutive~~ following rectangles...
 PUZZLE IMAGE:
 ![image alt](https://crypto.haluska.sk/crypto5fix.png)
 
-His(author) previous puzzle solving patterns:
+His(author/puzzle creator) previous puzzle solving patterns:
 
 PUZZLE 1:
 ![image alt](https://crypto.haluska.sk/crypto1solver.png)
