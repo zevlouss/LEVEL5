@@ -7,9 +7,10 @@ Creator: Zden
 Start Date: 2018-11-09
 Address:1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7
 
-CHALLENGE Find the private key in this image
+CHALLENGE:
+Find the private key in this image
 
-Hints:
+HINTS:
 Sum of two ~~consecutive~~ following rectangles areas creates one byte of the private key
 Apply more operations to obtain the results in byte range
 
