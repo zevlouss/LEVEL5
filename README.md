@@ -1,4 +1,4 @@
-# Bicoin Crypto Puzzle Level 5
+# BITCOIN CRYPTO PUZZLE LEVEL 5
 
 0.005 BTC Level 5 Puzzle by Zden
 
@@ -22,4 +22,10 @@ Author:UNSOLVED for over 3 years because the original release was uncomplete! Re
 
 past hint:
 clarity edit: sum of two ~~consecutive~~ following rectangles...
+
+PUZZLE IMAGE:
+![image alt](https://github.com/zevlouss/LEVEL5/blob/3707c6fef42f7e2805c7d5fb7ec32e1a15fd950c/crypto5fix.png)
+
+
+
 
