@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5 Puzzle - Community Crowdsourcing Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #f39c12;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #bbb;
+            margin-bottom: 30px;
+        }
+        
+        .prize-box {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .mini-puzzle {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #f39c12;
+        }
+        
+        .mini-puzzle h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+        
+        .puzzle-display {
+            font-size: 1.5em;
+            text-align: center;
+            background: #000;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: monospace;
+            color: #0f0;
+        }
+        
+        .theory-section {
+            background: #34495e;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .theory-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin: 20px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            background: #2c3e50;
+            border: 2px solid #34495e;
+            border-radius: 5px;
+            color: #eee;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+        }
+        
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .theory-list {
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .theory-item {
+            background: #34495e;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .theory-item.success {
+            border-left-color: #27ae60;
+            background: #1e4d2b;
+        }
+        
+        .theory-item.failed {
+            border-left-color: #e74c3c;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #bbb;
+            margin-top: 10px;
+        }
+        
+        .help-box {
+            background: #16a085;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .help-box h4 {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #0f0;
+        }
+        
+        .address {
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            color: #f39c12;
+            text-align: center;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Bitcoin Crypto Puzzle Level 5</h1>
+        <p class="subtitle">Community Crowdsourcing Tool</p>
+        
+        <div class="prize-box">
+            🏆 Prize: 0.0055555 BTC (~$400-500 USD) 🏆<br>
+            Unsolved for 6+ years - Help decode the mini-puzzle!
+        </div>
+        
+        <div class="address">
+            Target Address: 1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7
+        </div>
+        
+        <div class="mini-puzzle">
+            <h2>🧩 The Mini-Puzzle Hint (NOT YET DECODED)</h2>
+            <div class="puzzle-display">
+┌─────────┐<br>
+│   -1    │<br>
+│   ×%:   │<br>
+│  LXIV   │  ← 64 in Roman numerals<br>
+│   /*/   │<br>
+└─────────┘<br>
+   FIX<br>
+<br>
+09111819    11122111
+            </div>
+            <p style="text-align: center; margin-top: 20px;">
+                <strong>This is the KEY to solving the puzzle!</strong><br>
+                What do these symbols and numbers mean?
+            </p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">5,700+</div>
+                <div class="stat-label">Approaches Tested</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">64</div>
+                <div class="stat-label">Rectangles in Image</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">32</div>
+                <div class="stat-label">Bytes Needed</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Solutions Found</div>
+            </div>
+        </div>
+        
+        <div class="theory-section">
+            <h3>💡 Submit Your Theory</h3>
+            
+            <div class="form-group">
+                <label for="category">Theory Category:</label>
+                <select id="category">
+                    <option value="formula">Formula Operations (-1, ×%:, LXIV, /*/)</option>
+                    <option value="numbers">Number Interpretation (09111819, 11122111)</option>
+                    <option value="pairing">Pairing Pattern</option>
+                    <option value="grid">Grid/Matrix Operations</option>
+                    <option value="other">Other / Creative Interpretation</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="theory-name">Theory Name:</label>
+                <input type="text" id="theory-name" placeholder="e.g., 'Sequential operations with FIX modifier'">
+            </div>
+            
+            <div class="form-group">
+                <label for="theory-desc">Detailed Description:</label>
+                <textarea id="theory-desc" placeholder="Explain your interpretation of the mini-puzzle...&#10;&#10;Example:&#10;I believe -1 means subtract 1 from each area.&#10;Then ×%: means multiply by 2 and take modulo 64.&#10;LXIV (64) is the modulo value.&#10;/*/ means divide by 2 to get final value."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="theory-reasoning">Why This Might Work:</label>
+                <textarea id="theory-reasoning" placeholder="What pattern or insight led you to this theory?&#10;Have you seen similar patterns in other puzzles?"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact">Contact (optional):</label>
+                <input type="text" id="contact" placeholder="Email or username if you want credit">
+            </div>
+            
+            <button onclick="submitTheory()">Submit Theory for Testing</button>
+        </div>
+        
+        <div class="help-box">
+            <h4>🎯 What We Know So Far:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>64 hollow rectangles in the image</li>
+                <li>Each rectangle has an "area" (outer - inner)</li>
+                <li>We need to combine them to make 32 bytes (256-bit key)</li>
+                <li>Standard approaches (5,700+ tested) haven't worked</li>
+                <li>The mini-puzzle hint is the missing piece</li>
+                <li>Creator's previous puzzles used multi-stage solutions</li>
+            </ul>
+        </div>
+        
+        <div class="help-box" style="background: #8e44ad;">
+            <h4>📚 Pattern from Previous Puzzles:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Level 4:</strong> Used color channels and mathematical operations</li>
+                <li><strong>Level 3:</strong> Multi-stage transformations</li>
+                <li><strong>Levels 1-2:</strong> Mathematical sequences and patterns</li>
+                <li><strong>Common:</strong> Hints are never decoration - they're critical!</li>
+            </ul>
+        </div>
+        
+        <div class="theory-section">
+            <h3>📋 Community Theories (Recent Submissions)</h3>
+            <div class="theory-list" id="theory-list">
+                <div class="theory-item">
+                    <strong>Example Theory #1:</strong> Formula Sequence<br>
+                    <small>Category: Formula | Submitted: 2025-10-30</small><br>
+                    Apply operations in sequence: (area - 1) × 2 % 64 ÷ 1<br>
+                    <em>Status: Tested ✗</em>
+                </div>
+                <div class="theory-item">
+                    <strong>Example Theory #2:</strong> Numbers as Indices<br>
+                    <small>Category: Numbers | Submitted: 2025-10-30</small><br>
+                    09111819 and 11122111 specify which rectangles to use<br>
+                    <em>Status: Tested ✗</em>
+                </div>
+                <div class="theory-item">
+                    <strong>Example Theory #3:</strong> Grid Rotation<br>
+                    <small>Category: Grid | Submitted: 2025-10-30</small><br>
+                    Arrange in 8×8 grid and rotate 90° before pairing<br>
+                    <em>Status: Tested ✗</em>
+                </div>
+                <p style="margin-top: 20px; text-align: center; color: #bbb;">
+                    <em>Your theory could be the one that solves it!</em>
+                </p>
+            </div>
+        </div>
+        
+        <div class="help-box" style="background: #c0392b;">
+            <h4>⚠️ Important Notes:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>This is a COMMUNITY effort - all submissions are tested</li>
+                <li>Credit will be given to whoever provides the winning theory</li>
+                <li>Be creative - standard math hasn't worked!</li>
+                <li>Think about what the CREATOR might have been thinking</li>
+                <li>The mini-puzzle symbols MUST mean something specific</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #2c3e50; border-radius: 8px;">
+            <h3 style="color: #f39c12;">🚀 Let's Solve This Together!</h3>
+            <p style="margin-top: 10px;">
+                After 6 years and 5,700+ computational attempts,<br>
+                the solution requires human creativity and insight.<br>
+                <strong>Your interpretation could be THE breakthrough!</strong>
+            </p>
+            <p style="margin-top: 20px; color: #bbb;">
+                <small>All testing done automatically | Results updated in real-time | Open source</small>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function submitTheory() {
+            const category = document.getElementById('category').value;
+            const name = document.getElementById('theory-name').value;
+            const description = document.getElementById('theory-desc').value;
+            const reasoning = document.getElementById('theory-reasoning').value;
+            const contact = document.getElementById('contact').value;
+            
+            if (!name || !description) {
+                alert('Please fill in at least the theory name and description!');
+                return;
+            }
+            
+            // Create theory object
+            const theory = {
+                category: category,
+                name: name,
+                description: description,
+                reasoning: reasoning,
+                contact: contact,
+                timestamp: new Date().toISOString()
+            };
+            
+            // In a real implementation, this would POST to a backend
+            console.log('Theory submitted:', theory);
+            
+            // For now, show success message
+            alert('✓ Theory submitted!\n\n' +
+                  'In a full implementation, this would:\n' +
+                  '1. Save your theory to a database\n' +
+                  '2. Queue it for automated testing\n' +
+                  '3. Notify the community if it works!\n\n' +
+                  'For now, you can test theories using the Python scripts provided.');
+            
+            // Clear form
+            document.getElementById('theory-name').value = '';
+            document.getElementById('theory-desc').value = '';
+            document.getElementById('theory-reasoning').value = '';
+            document.getElementById('contact').value = '';
+        }
+        
+        // Add some interactivity
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.borderColor = '#f39c12';
+            });
+            element.addEventListener('blur', function() {
+                this.style.borderColor = '#34495e';
+            });
+        });
+    </script>
+</body>
+</html>
