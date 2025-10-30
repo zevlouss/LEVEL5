@@ -45,4 +45,5 @@ FROM A PUZZLE SOLVER:
 When I first saw this puzzle, I thought the solution was the sum of the rectangles' areas. That is, there are 64 rectangles, which make up a private hex key. In a way, I thought each rectangle represented a hex character, so the theory made sense.
 I thought each rectangle wouldn't be one, but two rectangles in one.
 But you don't know, you don't have to take into account the pixels that delimit the height and width, or the pixels within each rectangle.
+
 ![image alt](https://github.com/zevlouss/LEVEL5/blob/4a5ed1b51c3e694cd6adea74d1fdcd5008a6c845/puzzleee.png)
