@@ -1,0 +1,4504 @@
+{
+  "records": [
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "hint_sbox_rank",
+      "bytes_preview": [
+        13,
+        12,
+        24,
+        25,
+        17,
+        12
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_1_64",
+      "bytes_preview": [
+        113,
+        119,
+        166,
+        213,
+        195,
+        146
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_1_224",
+      "bytes_preview": [
+        17,
+        23,
+        70,
+        117,
+        99,
+        50
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_3_96",
+      "bytes_preview": [
+        243,
+        5,
+        146,
+        31,
+        233,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_3_128",
+      "bytes_preview": [
+        19,
+        37,
+        178,
+        63,
+        9,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_3_184",
+      "bytes_preview": [
+        75,
+        93,
+        234,
+        119,
+        65,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_5_96",
+      "bytes_preview": [
+        85,
+        115,
+        94,
+        73,
+        239,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_5_120",
+      "bytes_preview": [
+        109,
+        139,
+        118,
+        97,
+        7,
+        18
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_5_152",
+      "bytes_preview": [
+        141,
+        171,
+        150,
+        129,
+        39,
+        50
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_5_232",
+      "bytes_preview": [
+        221,
+        251,
+        230,
+        209,
+        119,
+        130
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_32",
+      "bytes_preview": [
+        119,
+        161,
+        234,
+        51,
+        181,
+        94
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_48",
+      "bytes_preview": [
+        135,
+        177,
+        250,
+        67,
+        197,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_104",
+      "bytes_preview": [
+        191,
+        233,
+        50,
+        123,
+        253,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_112",
+      "bytes_preview": [
+        199,
+        241,
+        58,
+        131,
+        5,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_248",
+      "bytes_preview": [
+        79,
+        121,
+        194,
+        11,
+        141,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_7_77",
+      "bytes_preview": [
+        164,
+        206,
+        23,
+        96,
+        226,
+        139
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_9_40",
+      "bytes_preview": [
+        225,
+        23,
+        190,
+        101,
+        195,
+        10
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_9_136",
+      "bytes_preview": [
+        65,
+        119,
+        30,
+        197,
+        35,
+        106
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_11_16",
+      "bytes_preview": [
+        43,
+        109,
+        114,
+        119,
+        177,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_11_120",
+      "bytes_preview": [
+        147,
+        213,
+        218,
+        223,
+        25,
+        254
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_11_152",
+      "bytes_preview": [
+        179,
+        245,
+        250,
+        255,
+        57,
+        30
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_11_77",
+      "bytes_preview": [
+        104,
+        170,
+        175,
+        180,
+        238,
+        211
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_13_0",
+      "bytes_preview": [
+        125,
+        203,
+        46,
+        145,
+        167,
+        42
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_13_8",
+      "bytes_preview": [
+        133,
+        211,
+        54,
+        153,
+        175,
+        50
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_13_208",
+      "bytes_preview": [
+        77,
+        155,
+        254,
+        97,
+        119,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_13_224",
+      "bytes_preview": [
+        93,
+        171,
+        14,
+        113,
+        135,
+        10
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_13_77",
+      "bytes_preview": [
+        202,
+        24,
+        123,
+        222,
+        244,
+        119
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_15_40",
+      "bytes_preview": [
+        7,
+        97,
+        34,
+        227,
+        213,
+        246
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_15_104",
+      "bytes_preview": [
+        71,
+        161,
+        98,
+        35,
+        21,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_15_152",
+      "bytes_preview": [
+        119,
+        209,
+        146,
+        83,
+        69,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_15_160",
+      "bytes_preview": [
+        127,
+        217,
+        154,
+        91,
+        77,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_15_176",
+      "bytes_preview": [
+        143,
+        233,
+        170,
+        107,
+        93,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_17_112",
+      "bytes_preview": [
+        177,
+        23,
+        54,
+        85,
+        35,
+        226
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_17_208",
+      "bytes_preview": [
+        17,
+        119,
+        150,
+        181,
+        131,
+        66
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_19_104",
+      "bytes_preview": [
+        11,
+        125,
+        250,
+        119,
+        33,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_19_144",
+      "bytes_preview": [
+        51,
+        165,
+        34,
+        159,
+        73,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_19_176",
+      "bytes_preview": [
+        83,
+        197,
+        66,
+        191,
+        105,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_21_72",
+      "bytes_preview": [
+        77,
+        203,
+        166,
+        129,
+        7,
+        2
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_21_104",
+      "bytes_preview": [
+        109,
+        235,
+        198,
+        161,
+        39,
+        34
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_21_176",
+      "bytes_preview": [
+        181,
+        51,
+        14,
+        233,
+        111,
+        106
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_21_184",
+      "bytes_preview": [
+        189,
+        59,
+        22,
+        241,
+        119,
+        114
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_16",
+      "bytes_preview": [
+        119,
+        1,
+        58,
+        115,
+        213,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_32",
+      "bytes_preview": [
+        135,
+        17,
+        74,
+        131,
+        229,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_96",
+      "bytes_preview": [
+        199,
+        81,
+        138,
+        195,
+        37,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_104",
+      "bytes_preview": [
+        207,
+        89,
+        146,
+        203,
+        45,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_216",
+      "bytes_preview": [
+        63,
+        201,
+        2,
+        59,
+        157,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_23_77",
+      "bytes_preview": [
+        180,
+        62,
+        119,
+        176,
+        18,
+        171
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_29_88",
+      "bytes_preview": [
+        229,
+        147,
+        230,
+        57,
+        47,
+        162
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_29_160",
+      "bytes_preview": [
+        45,
+        219,
+        46,
+        129,
+        119,
+        234
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_29_176",
+      "bytes_preview": [
+        61,
+        235,
+        62,
+        145,
+        135,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_29_208",
+      "bytes_preview": [
+        93,
+        11,
+        94,
+        177,
+        167,
+        26
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_31_16",
+      "bytes_preview": [
+        255,
+        185,
+        106,
+        27,
+        237,
+        254
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_31_24",
+      "bytes_preview": [
+        7,
+        193,
+        114,
+        35,
+        245,
+        6
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_31_32",
+      "bytes_preview": [
+        15,
+        201,
+        122,
+        43,
+        253,
+        14
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_31_88",
+      "bytes_preview": [
+        71,
+        1,
+        178,
+        99,
+        53,
+        70
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_31_136",
+      "bytes_preview": [
+        119,
+        49,
+        226,
+        147,
+        101,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_47_8",
+      "bytes_preview": [
+        7,
+        33,
+        194,
+        99,
+        21,
+        22
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_47_72",
+      "bytes_preview": [
+        71,
+        97,
+        2,
+        163,
+        85,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_47_120",
+      "bytes_preview": [
+        119,
+        145,
+        50,
+        211,
+        133,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_47_128",
+      "bytes_preview": [
+        127,
+        153,
+        58,
+        219,
+        141,
+        142
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_47_144",
+      "bytes_preview": [
+        143,
+        169,
+        74,
+        235,
+        157,
+        158
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_63_0",
+      "bytes_preview": [
+        15,
+        137,
+        26,
+        171,
+        61,
+        46
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_63_56",
+      "bytes_preview": [
+        71,
+        193,
+        82,
+        227,
+        117,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_63_104",
+      "bytes_preview": [
+        119,
+        241,
+        130,
+        19,
+        165,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_63_240",
+      "bytes_preview": [
+        255,
+        121,
+        10,
+        155,
+        45,
+        30
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_63_248",
+      "bytes_preview": [
+        7,
+        129,
+        18,
+        163,
+        53,
+        38
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_79_40",
+      "bytes_preview": [
+        71,
+        33,
+        162,
+        35,
+        149,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_79_88",
+      "bytes_preview": [
+        119,
+        81,
+        210,
+        83,
+        197,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_79_96",
+      "bytes_preview": [
+        127,
+        89,
+        218,
+        91,
+        205,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_79_112",
+      "bytes_preview": [
+        143,
+        105,
+        234,
+        107,
+        221,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_79_232",
+      "bytes_preview": [
+        7,
+        225,
+        98,
+        227,
+        85,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_95_24",
+      "bytes_preview": [
+        71,
+        129,
+        242,
+        99,
+        181,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_95_72",
+      "bytes_preview": [
+        119,
+        177,
+        34,
+        147,
+        229,
+        182
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_95_208",
+      "bytes_preview": [
+        255,
+        57,
+        170,
+        27,
+        109,
+        62
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_95_216",
+      "bytes_preview": [
+        7,
+        65,
+        178,
+        35,
+        117,
+        70
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_95_224",
+      "bytes_preview": [
+        15,
+        73,
+        186,
+        43,
+        125,
+        78
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_111_8",
+      "bytes_preview": [
+        71,
+        225,
+        66,
+        163,
+        213,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_111_56",
+      "bytes_preview": [
+        119,
+        17,
+        114,
+        211,
+        5,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_111_64",
+      "bytes_preview": [
+        127,
+        25,
+        122,
+        219,
+        13,
+        206
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_111_80",
+      "bytes_preview": [
+        143,
+        41,
+        138,
+        235,
+        29,
+        222
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_111_200",
+      "bytes_preview": [
+        7,
+        161,
+        2,
+        99,
+        149,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_127_40",
+      "bytes_preview": [
+        119,
+        113,
+        194,
+        19,
+        37,
+        214
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_127_176",
+      "bytes_preview": [
+        255,
+        249,
+        74,
+        155,
+        173,
+        94
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_127_184",
+      "bytes_preview": [
+        7,
+        1,
+        82,
+        163,
+        181,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_127_192",
+      "bytes_preview": [
+        15,
+        9,
+        90,
+        171,
+        189,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_127_248",
+      "bytes_preview": [
+        71,
+        65,
+        146,
+        227,
+        245,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_159_8",
+      "bytes_preview": [
+        119,
+        49,
+        98,
+        147,
+        101,
+        246
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_159_144",
+      "bytes_preview": [
+        255,
+        185,
+        234,
+        27,
+        237,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_159_152",
+      "bytes_preview": [
+        7,
+        193,
+        242,
+        35,
+        245,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_159_160",
+      "bytes_preview": [
+        15,
+        201,
+        250,
+        43,
+        253,
+        142
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_159_216",
+      "bytes_preview": [
+        71,
+        1,
+        50,
+        99,
+        53,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_191_112",
+      "bytes_preview": [
+        255,
+        121,
+        138,
+        155,
+        45,
+        158
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_191_120",
+      "bytes_preview": [
+        7,
+        129,
+        146,
+        163,
+        53,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_191_128",
+      "bytes_preview": [
+        15,
+        137,
+        154,
+        171,
+        61,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_191_184",
+      "bytes_preview": [
+        71,
+        193,
+        210,
+        227,
+        117,
+        230
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_191_232",
+      "bytes_preview": [
+        119,
+        241,
+        2,
+        19,
+        165,
+        22
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_223_80",
+      "bytes_preview": [
+        255,
+        57,
+        42,
+        27,
+        109,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_223_88",
+      "bytes_preview": [
+        7,
+        65,
+        50,
+        35,
+        117,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_223_96",
+      "bytes_preview": [
+        15,
+        73,
+        58,
+        43,
+        125,
+        206
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_223_152",
+      "bytes_preview": [
+        71,
+        129,
+        114,
+        99,
+        181,
+        6
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_223_200",
+      "bytes_preview": [
+        119,
+        177,
+        162,
+        147,
+        229,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_255_48",
+      "bytes_preview": [
+        255,
+        249,
+        202,
+        155,
+        173,
+        222
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_255_56",
+      "bytes_preview": [
+        7,
+        1,
+        210,
+        163,
+        181,
+        230
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_255_64",
+      "bytes_preview": [
+        15,
+        9,
+        218,
+        171,
+        189,
+        238
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_255_120",
+      "bytes_preview": [
+        71,
+        65,
+        18,
+        227,
+        245,
+        38
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major",
+      "transform": "affine_255_168",
+      "bytes_preview": [
+        119,
+        113,
+        66,
+        19,
+        37,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "hint_sbox_rank",
+      "bytes_preview": [
+        13,
+        12,
+        24,
+        25,
+        17,
+        12
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_1_64",
+      "bytes_preview": [
+        113,
+        119,
+        166,
+        213,
+        195,
+        146
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_1_224",
+      "bytes_preview": [
+        17,
+        23,
+        70,
+        117,
+        99,
+        50
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_3_96",
+      "bytes_preview": [
+        243,
+        5,
+        146,
+        31,
+        233,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_3_128",
+      "bytes_preview": [
+        19,
+        37,
+        178,
+        63,
+        9,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_3_184",
+      "bytes_preview": [
+        75,
+        93,
+        234,
+        119,
+        65,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_5_96",
+      "bytes_preview": [
+        85,
+        115,
+        94,
+        73,
+        239,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_5_120",
+      "bytes_preview": [
+        109,
+        139,
+        118,
+        97,
+        7,
+        18
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_5_232",
+      "bytes_preview": [
+        221,
+        251,
+        230,
+        209,
+        119,
+        130
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_32",
+      "bytes_preview": [
+        119,
+        161,
+        234,
+        51,
+        181,
+        94
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_48",
+      "bytes_preview": [
+        135,
+        177,
+        250,
+        67,
+        197,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_104",
+      "bytes_preview": [
+        191,
+        233,
+        50,
+        123,
+        253,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_112",
+      "bytes_preview": [
+        199,
+        241,
+        58,
+        131,
+        5,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_248",
+      "bytes_preview": [
+        79,
+        121,
+        194,
+        11,
+        141,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_7_77",
+      "bytes_preview": [
+        164,
+        206,
+        23,
+        96,
+        226,
+        139
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_9_40",
+      "bytes_preview": [
+        225,
+        23,
+        190,
+        101,
+        195,
+        10
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_9_136",
+      "bytes_preview": [
+        65,
+        119,
+        30,
+        197,
+        35,
+        106
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_11_16",
+      "bytes_preview": [
+        43,
+        109,
+        114,
+        119,
+        177,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_11_120",
+      "bytes_preview": [
+        147,
+        213,
+        218,
+        223,
+        25,
+        254
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_11_152",
+      "bytes_preview": [
+        179,
+        245,
+        250,
+        255,
+        57,
+        30
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_11_77",
+      "bytes_preview": [
+        104,
+        170,
+        175,
+        180,
+        238,
+        211
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_13_8",
+      "bytes_preview": [
+        133,
+        211,
+        54,
+        153,
+        175,
+        50
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_13_208",
+      "bytes_preview": [
+        77,
+        155,
+        254,
+        97,
+        119,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_13_224",
+      "bytes_preview": [
+        93,
+        171,
+        14,
+        113,
+        135,
+        10
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_13_77",
+      "bytes_preview": [
+        202,
+        24,
+        123,
+        222,
+        244,
+        119
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_15_40",
+      "bytes_preview": [
+        7,
+        97,
+        34,
+        227,
+        213,
+        246
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_15_104",
+      "bytes_preview": [
+        71,
+        161,
+        98,
+        35,
+        21,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_15_152",
+      "bytes_preview": [
+        119,
+        209,
+        146,
+        83,
+        69,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_15_160",
+      "bytes_preview": [
+        127,
+        217,
+        154,
+        91,
+        77,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_15_176",
+      "bytes_preview": [
+        143,
+        233,
+        170,
+        107,
+        93,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_17_112",
+      "bytes_preview": [
+        177,
+        23,
+        54,
+        85,
+        35,
+        226
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_17_208",
+      "bytes_preview": [
+        17,
+        119,
+        150,
+        181,
+        131,
+        66
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_19_104",
+      "bytes_preview": [
+        11,
+        125,
+        250,
+        119,
+        33,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_19_144",
+      "bytes_preview": [
+        51,
+        165,
+        34,
+        159,
+        73,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_19_176",
+      "bytes_preview": [
+        83,
+        197,
+        66,
+        191,
+        105,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_21_72",
+      "bytes_preview": [
+        77,
+        203,
+        166,
+        129,
+        7,
+        2
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_21_176",
+      "bytes_preview": [
+        181,
+        51,
+        14,
+        233,
+        111,
+        106
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_21_184",
+      "bytes_preview": [
+        189,
+        59,
+        22,
+        241,
+        119,
+        114
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_16",
+      "bytes_preview": [
+        119,
+        1,
+        58,
+        115,
+        213,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_32",
+      "bytes_preview": [
+        135,
+        17,
+        74,
+        131,
+        229,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_96",
+      "bytes_preview": [
+        199,
+        81,
+        138,
+        195,
+        37,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_104",
+      "bytes_preview": [
+        207,
+        89,
+        146,
+        203,
+        45,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_216",
+      "bytes_preview": [
+        63,
+        201,
+        2,
+        59,
+        157,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_23_77",
+      "bytes_preview": [
+        180,
+        62,
+        119,
+        176,
+        18,
+        171
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_29_88",
+      "bytes_preview": [
+        229,
+        147,
+        230,
+        57,
+        47,
+        162
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_29_160",
+      "bytes_preview": [
+        45,
+        219,
+        46,
+        129,
+        119,
+        234
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_29_176",
+      "bytes_preview": [
+        61,
+        235,
+        62,
+        145,
+        135,
+        250
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_16",
+      "bytes_preview": [
+        255,
+        185,
+        106,
+        27,
+        237,
+        254
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_24",
+      "bytes_preview": [
+        7,
+        193,
+        114,
+        35,
+        245,
+        6
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_32",
+      "bytes_preview": [
+        15,
+        201,
+        122,
+        43,
+        253,
+        14
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_88",
+      "bytes_preview": [
+        71,
+        1,
+        178,
+        99,
+        53,
+        70
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_136",
+      "bytes_preview": [
+        119,
+        49,
+        226,
+        147,
+        101,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_31_155",
+      "bytes_preview": [
+        138,
+        68,
+        245,
+        166,
+        120,
+        137
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_47_8",
+      "bytes_preview": [
+        7,
+        33,
+        194,
+        99,
+        21,
+        22
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_47_72",
+      "bytes_preview": [
+        71,
+        97,
+        2,
+        163,
+        85,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_47_120",
+      "bytes_preview": [
+        119,
+        145,
+        50,
+        211,
+        133,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_47_128",
+      "bytes_preview": [
+        127,
+        153,
+        58,
+        219,
+        141,
+        142
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_47_144",
+      "bytes_preview": [
+        143,
+        169,
+        74,
+        235,
+        157,
+        158
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_63_0",
+      "bytes_preview": [
+        15,
+        137,
+        26,
+        171,
+        61,
+        46
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_63_56",
+      "bytes_preview": [
+        71,
+        193,
+        82,
+        227,
+        117,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_63_104",
+      "bytes_preview": [
+        119,
+        241,
+        130,
+        19,
+        165,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_63_240",
+      "bytes_preview": [
+        255,
+        121,
+        10,
+        155,
+        45,
+        30
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_63_248",
+      "bytes_preview": [
+        7,
+        129,
+        18,
+        163,
+        53,
+        38
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_79_40",
+      "bytes_preview": [
+        71,
+        33,
+        162,
+        35,
+        149,
+        118
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_79_88",
+      "bytes_preview": [
+        119,
+        81,
+        210,
+        83,
+        197,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_79_96",
+      "bytes_preview": [
+        127,
+        89,
+        218,
+        91,
+        205,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_79_112",
+      "bytes_preview": [
+        143,
+        105,
+        234,
+        107,
+        221,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_79_232",
+      "bytes_preview": [
+        7,
+        225,
+        98,
+        227,
+        85,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_24",
+      "bytes_preview": [
+        71,
+        129,
+        242,
+        99,
+        181,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_72",
+      "bytes_preview": [
+        119,
+        177,
+        34,
+        147,
+        229,
+        182
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_208",
+      "bytes_preview": [
+        255,
+        57,
+        170,
+        27,
+        109,
+        62
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_216",
+      "bytes_preview": [
+        7,
+        65,
+        178,
+        35,
+        117,
+        70
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_224",
+      "bytes_preview": [
+        15,
+        73,
+        186,
+        43,
+        125,
+        78
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_95_155",
+      "bytes_preview": [
+        202,
+        4,
+        117,
+        230,
+        56,
+        9
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_111_8",
+      "bytes_preview": [
+        71,
+        225,
+        66,
+        163,
+        213,
+        150
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_111_56",
+      "bytes_preview": [
+        119,
+        17,
+        114,
+        211,
+        5,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_111_64",
+      "bytes_preview": [
+        127,
+        25,
+        122,
+        219,
+        13,
+        206
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_111_80",
+      "bytes_preview": [
+        143,
+        41,
+        138,
+        235,
+        29,
+        222
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_111_200",
+      "bytes_preview": [
+        7,
+        161,
+        2,
+        99,
+        149,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_127_40",
+      "bytes_preview": [
+        119,
+        113,
+        194,
+        19,
+        37,
+        214
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_127_176",
+      "bytes_preview": [
+        255,
+        249,
+        74,
+        155,
+        173,
+        94
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_127_184",
+      "bytes_preview": [
+        7,
+        1,
+        82,
+        163,
+        181,
+        102
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_127_192",
+      "bytes_preview": [
+        15,
+        9,
+        90,
+        171,
+        189,
+        110
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_127_248",
+      "bytes_preview": [
+        71,
+        65,
+        146,
+        227,
+        245,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_8",
+      "bytes_preview": [
+        119,
+        49,
+        98,
+        147,
+        101,
+        246
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_144",
+      "bytes_preview": [
+        255,
+        185,
+        234,
+        27,
+        237,
+        126
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_152",
+      "bytes_preview": [
+        7,
+        193,
+        242,
+        35,
+        245,
+        134
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_160",
+      "bytes_preview": [
+        15,
+        201,
+        250,
+        43,
+        253,
+        142
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_216",
+      "bytes_preview": [
+        71,
+        1,
+        50,
+        99,
+        53,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_159_155",
+      "bytes_preview": [
+        10,
+        196,
+        245,
+        38,
+        248,
+        137
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_191_112",
+      "bytes_preview": [
+        255,
+        121,
+        138,
+        155,
+        45,
+        158
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_191_120",
+      "bytes_preview": [
+        7,
+        129,
+        146,
+        163,
+        53,
+        166
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_191_128",
+      "bytes_preview": [
+        15,
+        137,
+        154,
+        171,
+        61,
+        174
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_191_184",
+      "bytes_preview": [
+        71,
+        193,
+        210,
+        227,
+        117,
+        230
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_191_232",
+      "bytes_preview": [
+        119,
+        241,
+        2,
+        19,
+        165,
+        22
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_80",
+      "bytes_preview": [
+        255,
+        57,
+        42,
+        27,
+        109,
+        190
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_88",
+      "bytes_preview": [
+        7,
+        65,
+        50,
+        35,
+        117,
+        198
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_96",
+      "bytes_preview": [
+        15,
+        73,
+        58,
+        43,
+        125,
+        206
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_152",
+      "bytes_preview": [
+        71,
+        129,
+        114,
+        99,
+        181,
+        6
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_200",
+      "bytes_preview": [
+        119,
+        177,
+        162,
+        147,
+        229,
+        54
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_223_155",
+      "bytes_preview": [
+        74,
+        132,
+        117,
+        102,
+        184,
+        9
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_255_48",
+      "bytes_preview": [
+        255,
+        249,
+        202,
+        155,
+        173,
+        222
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_255_56",
+      "bytes_preview": [
+        7,
+        1,
+        210,
+        163,
+        181,
+        230
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_255_64",
+      "bytes_preview": [
+        15,
+        9,
+        218,
+        171,
+        189,
+        238
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_255_120",
+      "bytes_preview": [
+        71,
+        65,
+        18,
+        227,
+        245,
+        38
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "add",
+      "pairing": "row_major",
+      "transform": "affine_255_168",
+      "bytes_preview": [
+        119,
+        113,
+        66,
+        19,
+        37,
+        86
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "sqrt_norm",
+      "bytes_preview": [
+        205,
+        139,
+        114,
+        69,
+        8,
+        143
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "hint_sbox_rank",
+      "bytes_preview": [
+        25,
+        24,
+        119,
+        119,
+        17,
+        12
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_1_48",
+      "bytes_preview": [
+        177,
+        64,
+        215,
+        86,
+        119,
+        232
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_1_192",
+      "bytes_preview": [
+        65,
+        208,
+        103,
+        230,
+        7,
+        120
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_1_208",
+      "bytes_preview": [
+        81,
+        224,
+        119,
+        246,
+        23,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_3_48",
+      "bytes_preview": [
+        179,
+        96,
+        37,
+        162,
+        5,
+        88
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_3_200",
+      "bytes_preview": [
+        75,
+        248,
+        189,
+        58,
+        157,
+        240
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_5_136",
+      "bytes_preview": [
+        13,
+        216,
+        203,
+        70,
+        235,
+        32
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_5_152",
+      "bytes_preview": [
+        29,
+        232,
+        219,
+        86,
+        251,
+        48
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_5_176",
+      "bytes_preview": [
+        53,
+        0,
+        243,
+        110,
+        19,
+        72
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_5_216",
+      "bytes_preview": [
+        93,
+        40,
+        27,
+        150,
+        59,
+        112
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_7_88",
+      "bytes_preview": [
+        223,
+        200,
+        233,
+        98,
+        73,
+        96
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_7_136",
+      "bytes_preview": [
+        15,
+        248,
+        25,
+        146,
+        121,
+        144
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_7_152",
+      "bytes_preview": [
+        31,
+        8,
+        41,
+        162,
+        137,
+        160
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_7_168",
+      "bytes_preview": [
+        47,
+        24,
+        57,
+        178,
+        153,
+        176
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_7_240",
+      "bytes_preview": [
+        119,
+        96,
+        129,
+        250,
+        225,
+        248
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_9_8",
+      "bytes_preview": [
+        145,
+        152,
+        231,
+        94,
+        135,
+        128
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_9_152",
+      "bytes_preview": [
+        33,
+        40,
+        119,
+        238,
+        23,
+        16
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_9_248",
+      "bytes_preview": [
+        129,
+        136,
+        215,
+        78,
+        119,
+        112
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_9_77",
+      "bytes_preview": [
+        214,
+        221,
+        44,
+        163,
+        204,
+        197
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_11_160",
+      "bytes_preview": [
+        43,
+        80,
+        205,
+        66,
+        173,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_11_200",
+      "bytes_preview": [
+        83,
+        120,
+        245,
+        106,
+        213,
+        176
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_13_0",
+      "bytes_preview": [
+        141,
+        208,
+        123,
+        238,
+        155,
+        88
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_13_64",
+      "bytes_preview": [
+        205,
+        16,
+        187,
+        46,
+        219,
+        152
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_13_112",
+      "bytes_preview": [
+        253,
+        64,
+        235,
+        94,
+        11,
+        200
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_13_216",
+      "bytes_preview": [
+        101,
+        168,
+        83,
+        198,
+        115,
+        48
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_13_203",
+      "bytes_preview": [
+        88,
+        155,
+        70,
+        185,
+        102,
+        35
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_16",
+      "bytes_preview": [
+        159,
+        0,
+        217,
+        74,
+        57,
+        216
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_80",
+      "bytes_preview": [
+        223,
+        64,
+        25,
+        138,
+        121,
+        24
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_192",
+      "bytes_preview": [
+        79,
+        176,
+        137,
+        250,
+        233,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_224",
+      "bytes_preview": [
+        111,
+        208,
+        169,
+        26,
+        9,
+        168
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_232",
+      "bytes_preview": [
+        119,
+        216,
+        177,
+        34,
+        17,
+        176
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_15_155",
+      "bytes_preview": [
+        42,
+        139,
+        100,
+        213,
+        196,
+        99
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_17_80",
+      "bytes_preview": [
+        225,
+        96,
+        103,
+        214,
+        7,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_17_96",
+      "bytes_preview": [
+        241,
+        112,
+        119,
+        230,
+        23,
+        152
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_17_192",
+      "bytes_preview": [
+        81,
+        208,
+        215,
+        70,
+        119,
+        248
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_19_96",
+      "bytes_preview": [
+        243,
+        144,
+        197,
+        50,
+        165,
+        8
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_19_120",
+      "bytes_preview": [
+        11,
+        168,
+        221,
+        74,
+        189,
+        32
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_21_0",
+      "bytes_preview": [
+        149,
+        80,
+        179,
+        30,
+        211,
+        24
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_21_88",
+      "bytes_preview": [
+        237,
+        168,
+        11,
+        118,
+        43,
+        112
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_21_104",
+      "bytes_preview": [
+        253,
+        184,
+        27,
+        134,
+        59,
+        128
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_21_168",
+      "bytes_preview": [
+        61,
+        248,
+        91,
+        198,
+        123,
+        192
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_23_8",
+      "bytes_preview": [
+        159,
+        120,
+        9,
+        114,
+        105,
+        144
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_23_24",
+      "bytes_preview": [
+        175,
+        136,
+        25,
+        130,
+        121,
+        160
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_23_200",
+      "bytes_preview": [
+        95,
+        56,
+        201,
+        50,
+        41,
+        80
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_23_224",
+      "bytes_preview": [
+        119,
+        80,
+        225,
+        74,
+        65,
+        104
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_23_248",
+      "bytes_preview": [
+        143,
+        104,
+        249,
+        98,
+        89,
+        128
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_29_16",
+      "bytes_preview": [
+        173,
+        224,
+        251,
+        94,
+        27,
+        232
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_29_40",
+      "bytes_preview": [
+        197,
+        248,
+        19,
+        118,
+        51,
+        0
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_29_64",
+      "bytes_preview": [
+        221,
+        16,
+        43,
+        142,
+        75,
+        24
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_29_208",
+      "bytes_preview": [
+        109,
+        160,
+        187,
+        30,
+        219,
+        168
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_31_48",
+      "bytes_preview": [
+        207,
+        32,
+        105,
+        202,
+        201,
+        120
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_31_80",
+      "bytes_preview": [
+        239,
+        64,
+        137,
+        234,
+        233,
+        152
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_31_128",
+      "bytes_preview": [
+        31,
+        112,
+        185,
+        26,
+        25,
+        200
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_31_192",
+      "bytes_preview": [
+        95,
+        176,
+        249,
+        90,
+        89,
+        8
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_31_216",
+      "bytes_preview": [
+        119,
+        200,
+        17,
+        114,
+        113,
+        32
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_47_48",
+      "bytes_preview": [
+        223,
+        32,
+        217,
+        42,
+        57,
+        248
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_47_160",
+      "bytes_preview": [
+        79,
+        144,
+        73,
+        154,
+        169,
+        104
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_47_192",
+      "bytes_preview": [
+        111,
+        176,
+        105,
+        186,
+        201,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_47_200",
+      "bytes_preview": [
+        119,
+        184,
+        113,
+        194,
+        209,
+        144
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_47_240",
+      "bytes_preview": [
+        159,
+        224,
+        153,
+        234,
+        249,
+        184
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_16",
+      "bytes_preview": [
+        207,
+        0,
+        41,
+        106,
+        137,
+        88
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_48",
+      "bytes_preview": [
+        239,
+        32,
+        73,
+        138,
+        169,
+        120
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_96",
+      "bytes_preview": [
+        31,
+        80,
+        121,
+        186,
+        217,
+        168
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_160",
+      "bytes_preview": [
+        95,
+        144,
+        185,
+        250,
+        25,
+        232
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_184",
+      "bytes_preview": [
+        119,
+        168,
+        209,
+        18,
+        49,
+        0
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_63_77",
+      "bytes_preview": [
+        12,
+        61,
+        102,
+        167,
+        198,
+        149
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_16",
+      "bytes_preview": [
+        223,
+        0,
+        153,
+        202,
+        249,
+        216
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_128",
+      "bytes_preview": [
+        79,
+        112,
+        9,
+        58,
+        105,
+        72
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_160",
+      "bytes_preview": [
+        111,
+        144,
+        41,
+        90,
+        137,
+        104
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_168",
+      "bytes_preview": [
+        119,
+        152,
+        49,
+        98,
+        145,
+        112
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_208",
+      "bytes_preview": [
+        159,
+        192,
+        89,
+        138,
+        185,
+        152
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_79_155",
+      "bytes_preview": [
+        106,
+        139,
+        36,
+        85,
+        132,
+        99
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_95_16",
+      "bytes_preview": [
+        239,
+        0,
+        9,
+        42,
+        105,
+        88
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_95_64",
+      "bytes_preview": [
+        31,
+        48,
+        57,
+        90,
+        153,
+        136
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_95_128",
+      "bytes_preview": [
+        95,
+        112,
+        121,
+        154,
+        217,
+        200
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_95_152",
+      "bytes_preview": [
+        119,
+        136,
+        145,
+        178,
+        241,
+        224
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_95_240",
+      "bytes_preview": [
+        207,
+        224,
+        233,
+        10,
+        73,
+        56
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_96",
+      "bytes_preview": [
+        79,
+        80,
+        201,
+        218,
+        41,
+        40
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_128",
+      "bytes_preview": [
+        111,
+        112,
+        233,
+        250,
+        73,
+        72
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_136",
+      "bytes_preview": [
+        119,
+        120,
+        241,
+        2,
+        81,
+        80
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_176",
+      "bytes_preview": [
+        159,
+        160,
+        25,
+        42,
+        121,
+        120
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_240",
+      "bytes_preview": [
+        223,
+        224,
+        89,
+        106,
+        185,
+        184
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_111_77",
+      "bytes_preview": [
+        60,
+        61,
+        182,
+        199,
+        22,
+        21
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_127_32",
+      "bytes_preview": [
+        31,
+        16,
+        249,
+        250,
+        89,
+        104
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_127_96",
+      "bytes_preview": [
+        95,
+        80,
+        57,
+        58,
+        153,
+        168
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_127_120",
+      "bytes_preview": [
+        119,
+        104,
+        81,
+        82,
+        177,
+        192
+      ]
+    },
+    {
+      "area": "outer",
+      "pre_tick": "none",
+      "post_tick": "none",
+      "pairing": "row_major_rot1",
+      "transform": "affine_127_208",
+      "bytes_preview": [
+        207,
+        192,
+        169,
+        170,
+        9,
+        24
+      ]
+    }
+  ]
+}
