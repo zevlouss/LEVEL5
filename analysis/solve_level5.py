@@ -19,7 +19,10 @@ class RectangleMetrics:
     outer_area: float
     inner_area: float
     shell_area: float
+    outer_perimeter: float
+    inner_perimeter: float
     bbox: Tuple[int, int, int, int]
+    center_intensity_sum: float
 
 
 def load_rectangles(image_path: str) -> List[RectangleMetrics]:
@@ -44,10 +47,21 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
         outer_area = cv2.contourArea(outer_cnt)
         inner_area = cv2.contourArea(inner_cnt)
         shell_area = outer_area - inner_area
+        outer_perimeter = cv2.arcLength(outer_cnt, True)
+        inner_perimeter = cv2.arcLength(inner_cnt, True)
 
         x, y, w, h = cv2.boundingRect(outer_cnt)
         cx, cy = x + w / 2, y + h / 2
         row_key = round(cy / 10) * 10
+
+        cx_i, cy_i = int(round(cx)), int(round(cy))
+        half = 2
+        y0 = max(cy_i - half, 0)
+        y1 = min(cy_i + half + 1, binary.shape[0])
+        x0 = max(cx_i - half, 0)
+        x1 = min(cx_i + half + 1, binary.shape[1])
+        patch = binary[y0:y1, x0:x1]
+        center_sum = float(patch.sum() / 255)
 
         metrics = RectangleMetrics(
             index=-1,
@@ -56,7 +70,10 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
             outer_area=outer_area,
             inner_area=inner_area,
             shell_area=shell_area,
+            outer_perimeter=outer_perimeter,
+            inner_perimeter=inner_perimeter,
             bbox=(x, y, w, h),
+            center_intensity_sum=center_sum,
         )
 
         grouped.setdefault(row_key, []).append((cx, metrics))
@@ -99,6 +116,34 @@ def apply_tick_adjustments(values: np.ndarray, mode: str) -> np.ndarray:
     return adjusted
 
 
+def apply_pair_tick_adjustments(pair_sums: np.ndarray, pairs: Iterable[Tuple[int, int]], mode: str) -> np.ndarray:
+    if mode == "none":
+        return pair_sums
+
+    adjusted = pair_sums.astype(float).copy()
+    for pair_idx, (a, b) in enumerate(pairs):
+        delta = 0.0
+        factor = 1.0
+        for rect_idx, amount in TICK_ADJUSTMENTS.items():
+            if rect_idx in (a, b):
+                delta += amount
+                factor *= amount
+
+        if delta == 0 and factor == 1.0:
+            continue
+
+        if mode == "add":
+            adjusted[pair_idx] += delta
+        elif mode == "subtract":
+            adjusted[pair_idx] -= delta
+        elif mode == "multiply":
+            adjusted[pair_idx] *= factor
+        else:
+            raise ValueError(f"Unsupported pair adjustment mode: {mode}")
+
+    return adjusted
+
+
 def pairing_orders() -> Dict[str, List[Tuple[int, int]]]:
     idx = np.arange(64).reshape(8, 8)
 
@@ -118,12 +163,85 @@ def pairing_orders() -> Dict[str, List[Tuple[int, int]]]:
         snake_cols.extend(col[::-1] if c % 2 else col)
     orders["snake_cols"] = snake_cols
 
+    # Diagonal traversal (top-left to bottom-right)
+    diagonal = []
+    for s in range(0, 15):
+        for r in range(8):
+            c = s - r
+            if 0 <= c < 8:
+                diagonal.append(idx[r, c])
+    orders["diagonal"] = diagonal
+
+    diagonal_snake = []
+    for s in range(0, 15):
+        diag_indices = [idx[r, s - r] for r in range(8) if 0 <= s - r < 8]
+        if s % 2:
+            diag_indices = list(reversed(diag_indices))
+        diagonal_snake.extend(diag_indices)
+    orders["diagonal_snake"] = diagonal_snake
+
+    # Spiral traversal (clockwise from top-left)
+    spiral = []
+    top, bottom, left, right = 0, 7, 0, 7
+    while top <= bottom and left <= right:
+        for c in range(left, right + 1):
+            spiral.append(idx[top, c])
+        top += 1
+        for r in range(top, bottom + 1):
+            spiral.append(idx[r, right])
+        right -= 1
+        if top <= bottom:
+            for c in range(right, left - 1, -1):
+                spiral.append(idx[bottom, c])
+            bottom -= 1
+        if left <= right:
+            for r in range(bottom, top - 1, -1):
+                spiral.append(idx[r, left])
+            left += 1
+    orders["spiral_cw"] = spiral
+
+    # Gray-code traversal (3-bit Gray for rows and columns)
+    gray_sequence = [0, 1, 3, 2, 6, 7, 5, 4]
+    gray_order = []
+    for gr in gray_sequence:
+        for gc in gray_sequence:
+            gray_order.append(idx[gr, gc])
+    orders["gray_rowcol"] = gray_order
+
     pairings: Dict[str, List[Tuple[int, int]]] = {}
+    rotation_offsets = {"base": [0], "ticks": [1, 39, 40, 52, 53]}
+
     for name, order in orders.items():
         if len(order) != 64:
             raise ValueError(f"Order {name} has incorrect length {len(order)}")
-        pairs = [(order[i], order[i + 1]) for i in range(0, 64, 2)]
-        pairings[name] = pairs
+
+        offsets = rotation_offsets["base"] + rotation_offsets["ticks"]
+        seen_pairs = set()
+
+        for offset in offsets:
+            rotated = order[offset:] + order[:offset]
+            pairs = tuple((rotated[i], rotated[i + 1]) for i in range(0, 64, 2))
+            if pairs in seen_pairs:
+                continue
+            seen_pairs.add(pairs)
+            suffix = f"_rot{offset}" if offset else ""
+            pairings[f"{name}{suffix}"] = list(pairs)
+
+        # Swap tick rectangles with their immediate successors (if present)
+        for tick_idx in TICK_ADJUSTMENTS.keys():
+            for direction in (1, -1):
+                swapped_order = order[:]
+                try:
+                    pos = swapped_order.index(tick_idx)
+                    swap_pos = pos + direction
+                    if 0 <= swap_pos < len(swapped_order):
+                        swapped_order[pos], swapped_order[swap_pos] = swapped_order[swap_pos], swapped_order[pos]
+                        pairs = tuple((swapped_order[i], swapped_order[i + 1]) for i in range(0, 64, 2))
+                        if pairs not in seen_pairs:
+                            seen_pairs.add(pairs)
+                            pairings[f"{name}_swap{tick_idx}_{direction}"] = list(pairs)
+                except ValueError:
+                    continue
 
     return pairings
 
@@ -132,30 +250,92 @@ def combine_pairs(values: np.ndarray, pairs: Iterable[Tuple[int, int]]) -> np.nd
     return np.array([values[a] + values[b] for a, b in pairs], dtype=float)
 
 
-def transform_bytes(raw: np.ndarray) -> Dict[str, List[int]]:
-    results: Dict[str, List[int]] = {}
+def transform_bytes(raw: np.ndarray) -> Iterable[Tuple[str, List[int]]]:
+    def normalize_values(values: np.ndarray) -> np.ndarray | None:
+        if not np.all(np.isfinite(values)):
+            values = np.where(np.isfinite(values), values, 0.0)
+        max_val = float(np.max(values))
+        min_val = float(np.min(values))
+        if max_val == min_val:
+            return None
+        scaled = np.clip(np.round((values - min_val) / (max_val - min_val) * 255), 0, 255)
+        return scaled.astype(int)
 
-    # Mod 256 of raw values
-    results["mod256"] = [int(v) % 256 for v in raw]
+    raw_int = raw.astype(np.int64)
+
+    # Modulo variants
+    mod_vals = (raw_int % 256).astype(int)
+    yield "mod256", mod_vals.tolist()
 
     max_val = float(np.max(raw))
-    if max_val > 0:
-        res = np.clip(np.round(raw / max_val * 255), 0, 255)
-        results["scale_to_max"] = res.astype(int).tolist()
-
     min_val = float(np.min(raw))
     spread = max_val - min_val
+    if max_val != 0:
+        res = np.clip(np.round(raw / max_val * 255), 0, 255).astype(int)
+        yield "scale_to_max", res.tolist()
     if spread > 0:
-        res = np.clip(np.round((raw - min_val) / spread * 255), 0, 255)
-        results["minmax_norm"] = res.astype(int).tolist()
+        res = np.clip(np.round((raw - min_val) / spread * 255), 0, 255).astype(int)
+        yield "minmax_norm", res.tolist()
 
-    # Small affine transforms modulo 256 (inspired by mini-puzzle digits)
-    affine_params = list(itertools.product([1, 3, 5, 7, 9, 11, 13, 15, 255], [0, 16, 32, 48, 64, 77, 96]))
-    for a, b in affine_params:
-        transformed = [(a * int(v) + b) % 256 for v in raw]
-        results[f"affine_{a}_{b}"] = transformed
+    # Non-linear normalizations
+    shifted = raw - min_val if min_val < 0 else raw.copy()
+    shifted = np.maximum(shifted, 0)
+    if np.any(shifted > 0):
+        for name, arr in (
+            ("sqrt_norm", np.sqrt(shifted)),
+            ("cuberoot_norm", np.cbrt(shifted)),
+            ("square_norm", np.square(shifted)),
+            ("log_norm", np.log1p(shifted)),
+        ):
+            normalized = normalize_values(arr)
+            if normalized is not None:
+                yield name, normalized.tolist()
 
-    return results
+    mean_val = float(np.mean(raw))
+    std_val = float(np.std(raw))
+    if std_val > 0:
+        z = (raw - mean_val) / std_val
+        for name, arr in (
+            ("logistic_norm", 1.0 / (1.0 + np.exp(-z))),
+            ("tanh_norm", np.tanh(z)),
+        ):
+            normalized = normalize_values(arr)
+            if normalized is not None:
+                yield name, normalized.tolist()
+
+    if len(raw) > 1:
+        ranks = np.argsort(np.argsort(raw))
+        rank_scaled = np.round(ranks / (len(raw) - 1) * 255).astype(int)
+        yield "rank_scaled", rank_scaled.tolist()
+
+        hint_pattern = [0x09, 0x11, 0x18, 0x19, 0x77, 0x0C, 0x0D, 0x0A]
+        hint_sbox = (hint_pattern * ((len(raw) // len(hint_pattern)) + 1))[: len(raw)]
+        yield "hint_sbox_rank", [hint_sbox[r] for r in ranks]
+    else:
+        yield "rank_scaled", [0]
+        yield "hint_sbox_rank", [0x77]
+
+    # Expanded affine transforms modulo 256
+    affine_a = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 29, 31, 47, 63, 79, 95, 111, 127, 159, 191, 223, 255]
+    affine_b = list(range(0, 256, 8)) + [77, 119, 155, 203]
+    for a, b in itertools.product(affine_a, affine_b):
+        transformed = (a * raw_int + b) % 256
+        yield f"affine_{a}_{b}", transformed.astype(int).tolist()
+
+    xor_inputs = mod_vals
+    yield "xor_55", [(val ^ 0x55) for val in xor_inputs]
+    yield "xor_aa", [(val ^ 0xAA) for val in xor_inputs]
+    yield "xor_77", [(val ^ 0x77) for val in xor_inputs]
+    yield "negate", [(-int(val)) % 256 for val in raw]
+
+    def reverse_byte(byte: int) -> int:
+        b = byte & 0xFF
+        b = ((b >> 1) & 0x55) | ((b & 0x55) << 1)
+        b = ((b >> 2) & 0x33) | ((b & 0x33) << 2)
+        b = ((b >> 4) & 0x0F) | ((b & 0x0F) << 4)
+        return b
+
+    yield "bit_reverse", [reverse_byte(val) for val in xor_inputs]
 
 
 def privkey_to_address(priv_bytes: bytes, compressed: bool) -> str:
@@ -198,48 +378,90 @@ def contains_byte77(values: List[int]) -> bool:
 def search_candidates(image_path: str) -> List[Dict[str, str]]:
     rectangles = load_rectangles(image_path)
 
+    outer_values = np.array([r.outer_area for r in rectangles], dtype=float)
+    inner_values = np.array([r.inner_area for r in rectangles], dtype=float)
+    shell_values = np.array([r.shell_area for r in rectangles], dtype=float)
+    outer_perimeters = np.array([r.outer_perimeter for r in rectangles], dtype=float)
+    inner_perimeters = np.array([r.inner_perimeter for r in rectangles], dtype=float)
+    perimeter_diff = outer_perimeters - inner_perimeters
+    bbox_areas = np.array([r.bbox[2] * r.bbox[3] for r in rectangles], dtype=float)
+    aspect_ratios = np.array([
+        (r.bbox[2] / r.bbox[3]) if r.bbox[3] != 0 else 0.0 for r in rectangles
+    ], dtype=float)
+    center_sums = np.array([r.center_intensity_sum for r in rectangles], dtype=float)
+
+    row_weights = np.array([0, 9, 1, 1, 1, 8, 1, 9], dtype=float)
+    col_weights = np.array([1, 1, 1, 2, 2, 1, 1, 1], dtype=float)
+    row_indices = np.array([r.row for r in rectangles], dtype=int)
+    col_indices = np.array([r.col for r in rectangles], dtype=int)
+
+    row_weight_shell = shell_values * row_weights[row_indices]
+    col_weight_shell = shell_values * col_weights[col_indices]
+    rowcol_product_shell = shell_values * row_weights[row_indices] * col_weights[col_indices]
+
+    shell_outer_ratio = shell_values / np.where(outer_values != 0, outer_values, 1)
+    inner_outer_ratio = inner_values / np.where(outer_values != 0, outer_values, 1)
+    shell_perimeter_ratio = shell_values / np.where(perimeter_diff != 0, perimeter_diff, 1)
+
     area_sources = {
-        "outer": np.array([r.outer_area for r in rectangles], dtype=float),
-        "inner": np.array([r.inner_area for r in rectangles], dtype=float),
-        "shell": np.array([r.shell_area for r in rectangles], dtype=float),
+        "outer": outer_values,
+        "inner": inner_values,
+        "shell": shell_values,
+        "outer_perimeter": outer_perimeters,
+        "perimeter_diff": perimeter_diff,
+        "shell_outer_ratio": shell_outer_ratio,
+        "inner_outer_ratio": inner_outer_ratio,
+        "shell_perimeter_ratio": shell_perimeter_ratio,
+        "bbox_area": bbox_areas,
+        "aspect_ratio": aspect_ratios,
+        "center_patch_sum": center_sums,
+        "row_weight_shell": row_weight_shell,
+        "col_weight_shell": col_weight_shell,
+        "rowcol_product_shell": rowcol_product_shell,
     }
 
-    tick_modes = ["none", "add", "subtract", "multiply"]
+    pre_tick_modes = ["none", "add", "subtract", "multiply"]
+    post_tick_modes = ["none", "add", "subtract", "multiply"]
     pairings = pairing_orders()
 
     candidates: List[Dict[str, str]] = []
+    checked_keys: set[str] = set()
 
     for area_name, base_values in area_sources.items():
-        for tick_mode in tick_modes:
-            try:
-                adjusted_values = apply_tick_adjustments(base_values, tick_mode)
-            except ValueError:
-                continue
+        for pre_tick_mode in pre_tick_modes:
+            adjusted_values = apply_tick_adjustments(base_values, pre_tick_mode)
 
             for pair_name, pairs in pairings.items():
                 pair_sums = combine_pairs(adjusted_values, pairs)
-                transformed_sets = transform_bytes(pair_sums)
 
-                for transform_name, byte_values in transformed_sets.items():
-                    if len(byte_values) != 32:
-                        continue
-                    if not contains_byte77(byte_values):
-                        continue
+                for post_tick_mode in post_tick_modes:
+                    post_pair_sums = apply_pair_tick_adjustments(pair_sums, pairs, post_tick_mode)
 
-                    priv_bytes = bytes(byte_values)
+                    for transform_name, byte_values in transform_bytes(post_pair_sums):
+                        if len(byte_values) != 32:
+                            continue
+                        if not contains_byte77(byte_values):
+                            continue
 
-                    for compressed in (True, False):
-                        address = privkey_to_address(priv_bytes, compressed=compressed)
-                        if address == TARGET_ADDRESS:
-                            candidates.append({
-                                "area": area_name,
-                                "tick": tick_mode,
-                                "pairing": pair_name,
-                                "transform": transform_name,
-                                "format": "compressed" if compressed else "uncompressed",
-                                "hex_key": priv_bytes.hex(),
-                                "address": address,
-                            })
+                        priv_bytes = bytes(byte_values)
+                        hex_key = priv_bytes.hex()
+                        if hex_key in checked_keys:
+                            continue
+                        checked_keys.add(hex_key)
+
+                        for compressed in (True, False):
+                            address = privkey_to_address(priv_bytes, compressed=compressed)
+                            if address == TARGET_ADDRESS:
+                                candidates.append({
+                                    "area": area_name,
+                                    "pre_tick": pre_tick_mode,
+                                    "post_tick": post_tick_mode,
+                                    "pairing": pair_name,
+                                    "transform": transform_name,
+                                    "format": "compressed" if compressed else "uncompressed",
+                                    "hex_key": hex_key,
+                                    "address": address,
+                                })
     return candidates
 
 
