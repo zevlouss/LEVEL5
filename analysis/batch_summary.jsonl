@@ -1,0 +1,11 @@
+{"combo_index": 0, "area": "outer", "pre_tick": "none", "post_tick": "none", "pairing": "row_major", "transforms_processed": 51, "candidates_processed": 3, "unique_keys": 3, "matches": 0}
+{"summary": {"combinations_total": 1, "combinations_processed": 1, "start_index": 0, "end_index": 1, "total_transforms": 51, "total_candidates": 3, "matches_found": 0}}
+{"combo_index": 0, "area": "row_weight_shell", "pre_tick": "add", "post_tick": "none", "pairing": "row_major", "transforms_processed": 121, "candidates_processed": 7, "unique_keys": 7, "matches": 0}
+{"combo_index": 1, "area": "row_weight_shell", "pre_tick": "add", "post_tick": "add", "pairing": "row_major", "transforms_processed": 121, "candidates_processed": 6, "unique_keys": 6, "matches": 0}
+{"combo_index": 2, "area": "row_weight_shell", "pre_tick": "add", "post_tick": "none", "pairing": "row_major_rot1", "transforms_processed": 121, "candidates_processed": 8, "unique_keys": 8, "matches": 0}
+{"combo_index": 3, "area": "row_weight_shell", "pre_tick": "add", "post_tick": "add", "pairing": "row_major_rot1", "transforms_processed": 121, "candidates_processed": 4, "unique_keys": 4, "matches": 0}
+{"combo_index": 4, "area": "row_weight_shell", "pre_tick": "subtract", "post_tick": "none", "pairing": "row_major", "transforms_processed": 121, "candidates_processed": 6, "unique_keys": 6, "matches": 0}
+{"combo_index": 5, "area": "row_weight_shell", "pre_tick": "subtract", "post_tick": "add", "pairing": "row_major", "transforms_processed": 121, "candidates_processed": 5, "unique_keys": 5, "matches": 0}
+{"combo_index": 6, "area": "row_weight_shell", "pre_tick": "subtract", "post_tick": "none", "pairing": "row_major_rot1", "transforms_processed": 121, "candidates_processed": 5, "unique_keys": 5, "matches": 0}
+{"combo_index": 7, "area": "row_weight_shell", "pre_tick": "subtract", "post_tick": "add", "pairing": "row_major_rot1", "transforms_processed": 121, "candidates_processed": 4, "unique_keys": 4, "matches": 0}
+{"summary": {"combinations_total": 16, "combinations_processed": 8, "start_index": 0, "end_index": 8, "total_transforms": 968, "total_candidates": 45, "matches_found": 0}}

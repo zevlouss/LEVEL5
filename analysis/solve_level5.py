@@ -9,6 +9,8 @@ from ecdsa import SECP256k1, SigningKey
 
 TARGET_ADDRESS = "1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7"
 TICK_ADJUSTMENTS: Dict[int, int] = {39: 17, 52: 6}  # zero-based indices for rectangles 40 and 53
+DEFAULT_PRE_TICK_MODES: List[str] = ["none", "add", "subtract", "multiply"]
+DEFAULT_POST_TICK_MODES: List[str] = ["none", "add", "subtract", "multiply"]
 
 
 @dataclass
@@ -96,6 +98,55 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
         raise RuntimeError(f"Expected 64 rectangles, got {len(rectangles)}")
 
     return rectangles
+
+
+def compute_area_sources(rectangles: List[RectangleMetrics]) -> Dict[str, np.ndarray]:
+    outer_values = np.array([r.outer_area for r in rectangles], dtype=float)
+    inner_values = np.array([r.inner_area for r in rectangles], dtype=float)
+    shell_values = np.array([r.shell_area for r in rectangles], dtype=float)
+    outer_perimeters = np.array([r.outer_perimeter for r in rectangles], dtype=float)
+    inner_perimeters = np.array([r.inner_perimeter for r in rectangles], dtype=float)
+    perimeter_diff = outer_perimeters - inner_perimeters
+    bbox_areas = np.array([r.bbox[2] * r.bbox[3] for r in rectangles], dtype=float)
+    aspect_ratios = np.array([
+        (r.bbox[2] / r.bbox[3]) if r.bbox[3] != 0 else 0.0 for r in rectangles
+    ], dtype=float)
+    center_sums = np.array([r.center_intensity_sum for r in rectangles], dtype=float)
+
+    row_weights = np.array([0, 9, 1, 1, 1, 8, 1, 9], dtype=float)
+    col_weights = np.array([1, 1, 1, 2, 2, 1, 1, 1], dtype=float)
+    row_indices = np.array([r.row for r in rectangles], dtype=int)
+    col_indices = np.array([r.col for r in rectangles], dtype=int)
+
+    row_weight_shell = shell_values * row_weights[row_indices]
+    col_weight_shell = shell_values * col_weights[col_indices]
+    rowcol_product_shell = shell_values * row_weights[row_indices] * col_weights[col_indices]
+
+    shell_outer_ratio = shell_values / np.where(outer_values != 0, outer_values, 1)
+    inner_outer_ratio = inner_values / np.where(outer_values != 0, outer_values, 1)
+    shell_perimeter_ratio = shell_values / np.where(perimeter_diff != 0, perimeter_diff, 1)
+
+    return {
+        "outer": outer_values,
+        "inner": inner_values,
+        "shell": shell_values,
+        "outer_perimeter": outer_perimeters,
+        "perimeter_diff": perimeter_diff,
+        "shell_outer_ratio": shell_outer_ratio,
+        "inner_outer_ratio": inner_outer_ratio,
+        "shell_perimeter_ratio": shell_perimeter_ratio,
+        "bbox_area": bbox_areas,
+        "aspect_ratio": aspect_ratios,
+        "center_patch_sum": center_sums,
+        "row_weight_shell": row_weight_shell,
+        "col_weight_shell": col_weight_shell,
+        "rowcol_product_shell": rowcol_product_shell,
+    }
+
+
+def get_default_area_sources(image_path: str) -> Tuple[List[RectangleMetrics], Dict[str, np.ndarray]]:
+    rectangles = load_rectangles(image_path)
+    return rectangles, compute_area_sources(rectangles)
 
 
 def apply_tick_adjustments(values: np.ndarray, mode: str) -> np.ndarray:
@@ -376,52 +427,10 @@ def contains_byte77(values: List[int]) -> bool:
 
 
 def search_candidates(image_path: str) -> List[Dict[str, str]]:
-    rectangles = load_rectangles(image_path)
+    rectangles, area_sources = get_default_area_sources(image_path)
 
-    outer_values = np.array([r.outer_area for r in rectangles], dtype=float)
-    inner_values = np.array([r.inner_area for r in rectangles], dtype=float)
-    shell_values = np.array([r.shell_area for r in rectangles], dtype=float)
-    outer_perimeters = np.array([r.outer_perimeter for r in rectangles], dtype=float)
-    inner_perimeters = np.array([r.inner_perimeter for r in rectangles], dtype=float)
-    perimeter_diff = outer_perimeters - inner_perimeters
-    bbox_areas = np.array([r.bbox[2] * r.bbox[3] for r in rectangles], dtype=float)
-    aspect_ratios = np.array([
-        (r.bbox[2] / r.bbox[3]) if r.bbox[3] != 0 else 0.0 for r in rectangles
-    ], dtype=float)
-    center_sums = np.array([r.center_intensity_sum for r in rectangles], dtype=float)
-
-    row_weights = np.array([0, 9, 1, 1, 1, 8, 1, 9], dtype=float)
-    col_weights = np.array([1, 1, 1, 2, 2, 1, 1, 1], dtype=float)
-    row_indices = np.array([r.row for r in rectangles], dtype=int)
-    col_indices = np.array([r.col for r in rectangles], dtype=int)
-
-    row_weight_shell = shell_values * row_weights[row_indices]
-    col_weight_shell = shell_values * col_weights[col_indices]
-    rowcol_product_shell = shell_values * row_weights[row_indices] * col_weights[col_indices]
-
-    shell_outer_ratio = shell_values / np.where(outer_values != 0, outer_values, 1)
-    inner_outer_ratio = inner_values / np.where(outer_values != 0, outer_values, 1)
-    shell_perimeter_ratio = shell_values / np.where(perimeter_diff != 0, perimeter_diff, 1)
-
-    area_sources = {
-        "outer": outer_values,
-        "inner": inner_values,
-        "shell": shell_values,
-        "outer_perimeter": outer_perimeters,
-        "perimeter_diff": perimeter_diff,
-        "shell_outer_ratio": shell_outer_ratio,
-        "inner_outer_ratio": inner_outer_ratio,
-        "shell_perimeter_ratio": shell_perimeter_ratio,
-        "bbox_area": bbox_areas,
-        "aspect_ratio": aspect_ratios,
-        "center_patch_sum": center_sums,
-        "row_weight_shell": row_weight_shell,
-        "col_weight_shell": col_weight_shell,
-        "rowcol_product_shell": rowcol_product_shell,
-    }
-
-    pre_tick_modes = ["none", "add", "subtract", "multiply"]
-    post_tick_modes = ["none", "add", "subtract", "multiply"]
+    pre_tick_modes = DEFAULT_PRE_TICK_MODES
+    post_tick_modes = DEFAULT_POST_TICK_MODES
     pairings = pairing_orders()
 
     candidates: List[Dict[str, str]] = []
