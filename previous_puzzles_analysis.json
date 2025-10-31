@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-10-30T19:14:02.758208",
+  "level_4": {
+    "puzzle": "Level 4",
+    "release_date": "2017-06-09",
+    "solved_date": "2017-06-12",
+    "solve_time": "3 days",
+    "prize": "Unknown BTC amount",
+    "solver": "@mmorsl on Steemit",
+    "puzzle_type": "Image-based with multiple layers",
+    "key_elements": [
+      "Visual pattern recognition",
+      "Color channel analysis",
+      "Mathematical sequences",
+      "Encoding/decoding steps"
+    ],
+    "solution_method": {
+      "step1": "Analyzed image channels (RGB)",
+      "step2": "Found hidden patterns in color values",
+      "step3": "Applied mathematical operations",
+      "step4": "Decoded to private key"
+    },
+    "lessons": [
+      "Zden uses multi-stage puzzles",
+      "Visual elements encode mathematical data",
+      "Hints are crucial but not always obvious",
+      "Solution requires creative interpretation",
+      "Color/pixel data matters, not just shapes"
+    ]
+  },
+  "levels_1_3": {
+    "Level 1": {
+      "difficulty": "Beginner",
+      "type": "Direct encoding",
+      "pattern": "Simple mathematical transformation",
+      "key_insight": "Visual elements directly map to values",
+      "lesson": "Start with obvious interpretations"
+    },
+    "Level 2": {
+      "difficulty": "Intermediate",
+      "type": "Pattern recognition",
+      "pattern": "Sequence-based encoding",
+      "key_insight": "Elements form a mathematical sequence",
+      "lesson": "Look for mathematical progressions"
+    },
+    "Level 3": {
+      "difficulty": "Advanced",
+      "type": "Multi-stage transformation",
+      "pattern": "Layered encoding with operations",
+      "key_insight": "Multiple operations needed in sequence",
+      "lesson": "Solution may require compound operations"
+    }
+  },
+  "common_patterns": {
+    "visual_encoding": {
+      "description": "Uses visual elements (shapes, colors, sizes) to encode data",
+      "examples": [
+        "Rectangle areas (L5)",
+        "Color channels (L4)",
+        "Shape patterns (L1-3)"
+      ],
+      "importance": "HIGH"
+    },
+    "mathematical_operations": {
+      "description": "Requires mathematical transformations (not just direct reading)",
+      "examples": [
+        "Modulo operations",
+        "Division/multiplication",
+        "Sequence generation"
+      ],
+      "importance": "HIGH"
+    },
+    "multi_stage": {
+      "description": "Solutions often require multiple steps in sequence",
+      "examples": [
+        "Extract \u2192 Transform \u2192 Combine \u2192 Verify"
+      ],
+      "importance": "HIGH"
+    },
+    "hints_matter": {
+      "description": "Textual hints are critical and must be interpreted carefully",
+      "examples": [
+        "\"following\" not \"consecutive\"",
+        "Mini-puzzle symbols"
+      ],
+      "importance": "CRITICAL"
+    },
+    "creative_interpretation": {
+      "description": "Standard approaches may not work - creative thinking required",
+      "examples": [
+        "Non-obvious pairings",
+        "Hidden patterns",
+        "Contextual meanings"
+      ],
+      "importance": "HIGH"
+    },
+    "verification_built_in": {
+      "description": "Bitcoin addresses provide immediate verification",
+      "examples": [
+        "Generate key \u2192 Check address \u2192 Success or fail"
+      ],
+      "importance": "MEDIUM"
+    }
+  },
+  "new_theories": [
+    {
+      "id": "T1",
+      "name": "Color-Based Encoding",
+      "reasoning": "Level 4 used color channels. Maybe Level 5 image has hidden data in color channels?",
+      "test": "Check if crypto5fix.png has color information we missed",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "T2",
+      "name": "Sequence Generation",
+      "reasoning": "Levels 2-3 used mathematical sequences. Maybe areas generate a sequence?",
+      "test": "Look for Fibonacci, primes, powers of 2 in area patterns",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "T3",
+      "name": "Multi-Step Mini-Puzzle",
+      "reasoning": "Previous puzzles had multi-stage solutions. Mini-puzzle might define stages.",
+      "test": "Apply operations in sequence: -1, then \u00d7, then %, then \u00f7",
+      "priority": "HIGH"
+    },
+    {
+      "id": "T4",
+      "name": "Numbers as Stage Indicators",
+      "reasoning": "09111819 and 11122111 might indicate which operation to use when",
+      "test": "Use numbers as operation selectors for each rectangle",
+      "priority": "HIGH"
+    },
+    {
+      "id": "T5",
+      "name": "Grid Transformation",
+      "reasoning": "LXIV (64) and 8\u00d78 structure suggests grid operations",
+      "test": "Apply 2D matrix operations (transpose, rotate, reflect)",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "T6",
+      "name": "FIX as Instruction",
+      "reasoning": "The word \"FIX\" in mini-puzzle might be a directive",
+      "test": "FIX could mean: Fixed-point math, Fix/correct something, F=15 I=9 X=24 in hex",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "T7",
+      "name": "Cross-Rectangle Operations",
+      "reasoning": "Previous puzzles combined elements creatively",
+      "test": "Operations between non-adjacent rectangles based on hint numbers",
+      "priority": "HIGH"
+    }
+  ]
+}
