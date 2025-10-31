@@ -11,6 +11,9 @@ TARGET_ADDRESS = "1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7"
 TICK_ADJUSTMENTS: Dict[int, int] = {39: 17, 52: 6}  # zero-based indices for rectangles 40 and 53
 DEFAULT_PRE_TICK_MODES: List[str] = ["none", "add", "subtract", "multiply"]
 DEFAULT_POST_TICK_MODES: List[str] = ["none", "add", "subtract", "multiply"]
+MINI_HINT_PATTERN: Tuple[int, ...] = (0x09, 0x11, 0x18, 0x19, 0x77, 0x0C, 0x0D, 0x0A)
+HINT_SBOX_32: Tuple[int, ...] = (MINI_HINT_PATTERN * 4)[:32]
+GRAY32: Tuple[int, ...] = tuple(i ^ (i >> 1) for i in range(32))
 
 
 @dataclass
@@ -23,8 +26,13 @@ class RectangleMetrics:
     shell_area: float
     outer_perimeter: float
     inner_perimeter: float
-    bbox: Tuple[int, int, int, int]
+    outer_bbox: Tuple[int, int, int, int]
+    inner_bbox: Tuple[int, int, int, int]
     center_intensity_sum: float
+    shell_thickness_mean: float
+    shell_thickness_diff: float
+    local_patch_mean: float
+    local_patch_std: float
 
 
 def load_rectangles(image_path: str) -> List[RectangleMetrics]:
@@ -53,6 +61,7 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
         inner_perimeter = cv2.arcLength(inner_cnt, True)
 
         x, y, w, h = cv2.boundingRect(outer_cnt)
+        ix, iy, iw, ih = cv2.boundingRect(inner_cnt)
         cx, cy = x + w / 2, y + h / 2
         row_key = round(cy / 10) * 10
 
@@ -65,6 +74,20 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
         patch = binary[y0:y1, x0:x1]
         center_sum = float(patch.sum() / 255)
 
+        thickness_x = max((w - iw) / 2.0, 0.0)
+        thickness_y = max((h - ih) / 2.0, 0.0)
+        thickness_mean = (thickness_x + thickness_y) / 2.0
+        thickness_diff = thickness_x - thickness_y
+
+        patch_large_half = 4
+        ly0 = max(cy_i - patch_large_half, 0)
+        ly1 = min(cy_i + patch_large_half + 1, img.shape[0])
+        lx0 = max(cx_i - patch_large_half, 0)
+        lx1 = min(cx_i + patch_large_half + 1, img.shape[1])
+        local_patch = img[ly0:ly1, lx0:lx1].astype(np.float32)
+        local_patch_mean = float(local_patch.mean()) if local_patch.size else 0.0
+        local_patch_std = float(local_patch.std()) if local_patch.size else 0.0
+
         metrics = RectangleMetrics(
             index=-1,
             row=-1,
@@ -74,8 +97,13 @@ def load_rectangles(image_path: str) -> List[RectangleMetrics]:
             shell_area=shell_area,
             outer_perimeter=outer_perimeter,
             inner_perimeter=inner_perimeter,
-            bbox=(x, y, w, h),
+            outer_bbox=(x, y, w, h),
+            inner_bbox=(ix, iy, iw, ih),
             center_intensity_sum=center_sum,
+            shell_thickness_mean=thickness_mean,
+            shell_thickness_diff=thickness_diff,
+            local_patch_mean=local_patch_mean,
+            local_patch_std=local_patch_std,
         )
 
         grouped.setdefault(row_key, []).append((cx, metrics))
@@ -107,9 +135,9 @@ def compute_area_sources(rectangles: List[RectangleMetrics]) -> Dict[str, np.nda
     outer_perimeters = np.array([r.outer_perimeter for r in rectangles], dtype=float)
     inner_perimeters = np.array([r.inner_perimeter for r in rectangles], dtype=float)
     perimeter_diff = outer_perimeters - inner_perimeters
-    bbox_areas = np.array([r.bbox[2] * r.bbox[3] for r in rectangles], dtype=float)
+    bbox_areas = np.array([r.outer_bbox[2] * r.outer_bbox[3] for r in rectangles], dtype=float)
     aspect_ratios = np.array([
-        (r.bbox[2] / r.bbox[3]) if r.bbox[3] != 0 else 0.0 for r in rectangles
+        (r.outer_bbox[2] / r.outer_bbox[3]) if r.outer_bbox[3] != 0 else 0.0 for r in rectangles
     ], dtype=float)
     center_sums = np.array([r.center_intensity_sum for r in rectangles], dtype=float)
 
@@ -121,6 +149,10 @@ def compute_area_sources(rectangles: List[RectangleMetrics]) -> Dict[str, np.nda
     row_weight_shell = shell_values * row_weights[row_indices]
     col_weight_shell = shell_values * col_weights[col_indices]
     rowcol_product_shell = shell_values * row_weights[row_indices] * col_weights[col_indices]
+    shell_thickness_mean = np.array([r.shell_thickness_mean for r in rectangles], dtype=float)
+    shell_thickness_diff = np.array([r.shell_thickness_diff for r in rectangles], dtype=float)
+    local_patch_mean = np.array([r.local_patch_mean for r in rectangles], dtype=float)
+    local_patch_std = np.array([r.local_patch_std for r in rectangles], dtype=float)
 
     shell_outer_ratio = shell_values / np.where(outer_values != 0, outer_values, 1)
     inner_outer_ratio = inner_values / np.where(outer_values != 0, outer_values, 1)
@@ -141,6 +173,10 @@ def compute_area_sources(rectangles: List[RectangleMetrics]) -> Dict[str, np.nda
         "row_weight_shell": row_weight_shell,
         "col_weight_shell": col_weight_shell,
         "rowcol_product_shell": rowcol_product_shell,
+        "shell_thickness_mean": shell_thickness_mean,
+        "shell_thickness_diff": shell_thickness_diff,
+        "local_patch_mean": local_patch_mean,
+        "local_patch_std": local_patch_std,
     }
 
 
@@ -356,15 +392,49 @@ def transform_bytes(raw: np.ndarray) -> Iterable[Tuple[str, List[int]]]:
 
     if len(raw) > 1:
         ranks = np.argsort(np.argsort(raw))
+        sorted_indices = np.argsort(raw)
         rank_scaled = np.round(ranks / (len(raw) - 1) * 255).astype(int)
         yield "rank_scaled", rank_scaled.tolist()
 
-        hint_pattern = [0x09, 0x11, 0x18, 0x19, 0x77, 0x0C, 0x0D, 0x0A]
+        hint_cycle = [HINT_SBOX_32[i % len(HINT_SBOX_32)] for i in range(len(raw))]
+        yield "hint_sbox_cycle", hint_cycle
+
+        hint_pattern = list(MINI_HINT_PATTERN)
         hint_sbox = (hint_pattern * ((len(raw) // len(hint_pattern)) + 1))[: len(raw)]
         yield "hint_sbox_rank", [hint_sbox[r] for r in ranks]
+
+        gray_values = [HINT_SBOX_32[g % len(HINT_SBOX_32)] for g in GRAY32]
+        gray_mapping = [0] * len(raw)
+        for idx_rank, sorted_idx in enumerate(sorted_indices):
+            gray_mapping[sorted_idx] = gray_values[idx_rank % len(gray_values)]
+        yield "gray_hint_sbox", gray_mapping
+
+        quartiles = np.quantile(raw, [0.25, 0.5, 0.75])
+        bucket_values = (0x09, 0x18, 0x77, 0x0C)
+        bucketed = []
+        for value in raw:
+            if value <= quartiles[0]:
+                bucketed.append(bucket_values[0])
+            elif value <= quartiles[1]:
+                bucketed.append(bucket_values[1])
+            elif value <= quartiles[2]:
+                bucketed.append(bucket_values[2])
+            else:
+                bucketed.append(bucket_values[3])
+        yield "quartile_hint_map", bucketed
+
+        cdf_values = (np.argsort(np.argsort(raw, kind="mergesort"), kind="mergesort") + 1) / len(raw)
+        cdf_scaled = np.round(cdf_values * 255).astype(int)
+        yield "cdf_scaled", cdf_scaled.tolist()
     else:
+        default_hint = HINT_SBOX_32[0]
+        default_bucket = MINI_HINT_PATTERN[0]
         yield "rank_scaled", [0]
+        yield "hint_sbox_cycle", [default_hint]
         yield "hint_sbox_rank", [0x77]
+        yield "gray_hint_sbox", [default_hint]
+        yield "quartile_hint_map", [default_bucket]
+        yield "cdf_scaled", [0]
 
     # Expanded affine transforms modulo 256
     affine_a = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 29, 31, 47, 63, 79, 95, 111, 127, 159, 191, 223, 255]
